@@ -1,6 +1,6 @@
 # Mock Data
 
-Faker to generate mock data in JSON Format
+Faker to generate mock data
 
 ## Run
 

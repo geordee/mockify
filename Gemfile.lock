@@ -18,6 +18,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    xml-simple (1.1.5)
     zeitwerk (2.4.0)
 
 PLATFORMS
@@ -26,6 +27,7 @@ PLATFORMS
 DEPENDENCIES
   faker
   jbuilder
+  xml-simple
 
 BUNDLED WITH
    2.1.4

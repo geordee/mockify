@@ -4,6 +4,7 @@ require 'erb'
 require 'json'
 require 'faker'
 require 'jbuilder'
+require 'xmlsimple'
 
 def item
   Jbuilder.encode do |json|
@@ -23,15 +24,18 @@ end
 
 file = File.open(File.join(__dir__, '..', 'data', 'items.json'), 'w+')
 items = []
-1000.times do
+10.times do
   items << JSON.parse(item)
 end
 file.write JSON.pretty_generate(items)
 
 file = File.open(File.join(__dir__, '..', 'data', 'items.es.json'), 'w+')
-1000.times do
+10.times do
   line = item
   action = { index: {_index: 'items', _id: JSON.parse(line)['id']} }.to_json
   record = [action, line].join("\n")
   file.puts(record)
 end
+
+file = File.open(File.join(__dir__, '..', 'data', 'items.xml'), 'w+')
+file.write XmlSimple.xml_out(items, { rootname: 'items', anonymoustag: 'item' })
