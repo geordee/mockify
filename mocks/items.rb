@@ -27,3 +27,11 @@ items = []
   items << JSON.parse(item)
 end
 file.write JSON.pretty_generate(items)
+
+file = File.open(File.join(__dir__, '..', 'data', 'items.es.json'), 'w+')
+1000.times do
+  line = item
+  action = { index: {_index: 'items', _id: JSON.parse(line)['id']} }.to_json
+  record = [action, line].join("\n")
+  file.puts(record)
+end
