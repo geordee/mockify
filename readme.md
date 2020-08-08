@@ -6,5 +6,5 @@ Faker to generate mock data
 
 Example:
 ```
-ruby mocks/item/mock.rb
+ruby mocks/items/mock.rb
 ```
