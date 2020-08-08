@@ -1,3 +1,2 @@
-*.json
-*.csv
-*.xml
+data/**/*.json
+

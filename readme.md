@@ -1,10 +1,10 @@
 # Mock Data
 
-Faker to generate mock data
+Faker to generate mock data in JSON Format
 
 ## Run
 
 Example:
 ```
-ruby mocks/items/mock.rb
+ruby mocks/items.rb
 ```
